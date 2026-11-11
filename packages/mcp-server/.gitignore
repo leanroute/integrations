@@ -1,0 +1,8 @@
+dist/
+node_modules/
+
+# DNS auth private key — NEVER commit. Regenerate + rotate the TXT
+# record if this ever leaks. See docs at
+# https://github.com/modelcontextprotocol/registry/blob/main/docs/modelcontextprotocol-io/authentication.mdx
+key.pem
+*.pem

@@ -1,0 +1,68 @@
+{
+  "name": "@leanroute/vercel-ai-sdk",
+  "version": "0.2.0",
+  "description": "Vercel AI SDK provider for Leanroute. Drop-in `leanroute` provider — same interface as `@ai-sdk/openai`, but routes across 14 LLM providers (OpenAI, Anthropic, Google, DeepSeek, Groq, xAI, and more) with cost caps, failover, and MCP support baked in at the gateway.",
+  "keywords": [
+    "leanroute",
+    "vercel",
+    "vercel-ai-sdk",
+    "ai-sdk",
+    "llm-gateway",
+    "openai",
+    "anthropic",
+    "streaming"
+  ],
+  "license": "Apache-2.0",
+  "homepage": "https://leanroute.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leanroute/integrations.git",
+    "directory": "packages/leanroute-vercel-ai"
+  },
+  "type": "module",
+  "main": "./dist-cjs/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist-cjs/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "dist-cjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "npm run build:esm && npm run build:cjs && npm run build:fixup",
+    "build:esm": "tsc -p tsconfig.build.json",
+    "build:cjs": "tsc -p tsconfig.build.cjs.json",
+    "build:fixup": "node scripts/fixup.mjs",
+    "typecheck": "tsc --noEmit",
+    "dev": "tsc -p tsconfig.build.json --watch"
+  },
+  "peerDependencies": {
+    "@ai-sdk/openai": ">=1.0.0 <3.0.0",
+    "ai": ">=4.0.0 <6.0.0"
+  },
+  "devDependencies": {
+    "@ai-sdk/openai": "^1.0.0",
+    "ai": "^4.0.0",
+    "@types/node": "^22.7.5",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "bugs": {
+    "url": "https://github.com/leanroute/integrations/issues"
+  }
+}

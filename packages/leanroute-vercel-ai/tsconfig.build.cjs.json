@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": "./dist-cjs",
+    "declaration": true,
+    "allowImportingTsExtensions": false,
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "target": "ES2020"
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/**/*.test.ts"]
+}

@@ -1,0 +1,67 @@
+{
+  "name": "@leanroute/langchain",
+  "version": "0.2.0",
+  "description": "LangChain integration for Leanroute. Drop-in `ChatLeanroute` chat model — same interface as `ChatOpenAI`, but routes across 14 LLM providers (OpenAI, Anthropic, Google, DeepSeek, Groq, xAI, and more) with cost caps, failover, and MCP support baked in.",
+  "keywords": [
+    "leanroute",
+    "langchain",
+    "langchain-integration",
+    "llm-gateway",
+    "openai",
+    "anthropic",
+    "chat-model"
+  ],
+  "license": "Apache-2.0",
+  "homepage": "https://leanroute.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leanroute/integrations.git",
+    "directory": "packages/leanroute-langchain"
+  },
+  "type": "module",
+  "main": "./dist-cjs/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist-cjs/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "dist-cjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "npm run build:esm && npm run build:cjs && npm run build:fixup",
+    "build:esm": "tsc -p tsconfig.build.json",
+    "build:cjs": "tsc -p tsconfig.build.cjs.json",
+    "build:fixup": "node scripts/fixup.mjs",
+    "typecheck": "tsc --noEmit",
+    "dev": "tsc -p tsconfig.build.json --watch"
+  },
+  "peerDependencies": {
+    "@langchain/core": ">=0.3.0 <1.0.0",
+    "@langchain/openai": ">=0.3.0 <1.0.0"
+  },
+  "devDependencies": {
+    "@langchain/core": "^0.3.0",
+    "@langchain/openai": "^0.3.0",
+    "@types/node": "^22.7.5",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "bugs": {
+    "url": "https://github.com/leanroute/integrations/issues"
+  }
+}

@@ -1,0 +1,8 @@
+# Leanroute runtime key — mints at https://leanroute.dev/dashboard/keys
+# Runtime keys start with `gw_live_` and are what you use for LLM traffic.
+# Rename this file to `.env.local` for local dev.
+LEANROUTE_API_KEY=gw_live_your_runtime_key_here
+
+# Optional: base URL override. Only touch this if you're pointing at a
+# self-hosted Leanroute instance or a staging environment.
+# LEANROUTE_BASE_URL=https://api.leanroute.dev/v1

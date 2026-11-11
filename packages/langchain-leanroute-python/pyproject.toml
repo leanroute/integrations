@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "langchain-leanroute"
+version = "0.1.0"
+description = "LangChain integration for Leanroute, the agent-native AI gateway. ChatLeanroute routes to 100+ models across 14 providers, with cost per agent run, MCP tools on any model, failover, caching and spend caps."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.9"
+authors = [{ name = "Leanroute Pte. Ltd.", email = "support@leanroute.dev" }]
+keywords = ["leanroute", "langchain", "langgraph", "llm-gateway", "ai-gateway", "agents", "openai"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "langchain-openai>=0.2.0",
+  "langchain-core>=0.3.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.urls]
+Homepage = "https://leanroute.dev"
+Documentation = "https://leanroute.dev/docs/integrations/langchain"
+Repository = "https://github.com/leanroute/integrations"
+Issues = "https://github.com/leanroute/integrations/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/langchain_leanroute"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

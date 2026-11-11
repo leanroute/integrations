@@ -1,0 +1,45 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "dev.leanroute/mcp-server",
+  "description": "Leanroute MCP: route to 14 LLM providers, check pricing/usage/credit, manage keys from any agent.",
+  "repository": {
+    "url": "https://github.com/leanroute/integrations",
+    "source": "github",
+    "subfolder": "packages/mcp-server"
+  },
+  "version": "0.1.4",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@leanroute/mcp-server",
+      "version": "0.1.4",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "LEANROUTE_ADMIN_KEY",
+          "description": "Admin API key (gw_admin_*). Mint at https://leanroute.dev/dashboard/admin-keys. Required for platform tools (pricing, usage, credit, key management).",
+          "isRequired": true,
+          "isSecret": true,
+          "format": "string"
+        },
+        {
+          "name": "LEANROUTE_RUNTIME_KEY",
+          "description": "Runtime API key (gw_live_*). Mint at https://leanroute.dev/dashboard/keys. Optional — only required for the route_call tool that dispatches actual LLM completions.",
+          "isRequired": false,
+          "isSecret": true,
+          "format": "string"
+        },
+        {
+          "name": "LEANROUTE_BASE_URL",
+          "description": "Base URL override for self-hosted Leanroute instances.",
+          "isRequired": false,
+          "isSecret": false,
+          "format": "string",
+          "default": "https://api.leanroute.dev"
+        }
+      ]
+    }
+  ]
+}

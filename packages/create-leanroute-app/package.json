@@ -1,0 +1,51 @@
+{
+  "name": "create-leanroute-app",
+  "version": "0.1.0",
+  "description": "Scaffold a new Leanroute-powered app. `npx create-leanroute-app my-app` gets you a running Next.js chat app (streaming, model picker, cost display) or a bare Node.js CLI starter pre-wired to Leanroute's OpenAI-compatible endpoint.",
+  "keywords": [
+    "leanroute",
+    "llm-gateway",
+    "openai",
+    "anthropic",
+    "starter",
+    "template",
+    "scaffold",
+    "next.js"
+  ],
+  "license": "Apache-2.0",
+  "homepage": "https://leanroute.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leanroute/integrations.git",
+    "directory": "packages/create-leanroute-app"
+  },
+  "type": "module",
+  "bin": {
+    "create-leanroute-app": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "templates",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "dev": "tsc -p tsconfig.build.json --watch"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.7.0",
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "@types/node": "^22.7.5"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "bugs": {
+    "url": "https://github.com/leanroute/integrations/issues"
+  }
+}

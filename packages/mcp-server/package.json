@@ -1,0 +1,54 @@
+{
+  "name": "@leanroute/mcp-server",
+  "version": "0.1.4",
+  "mcpName": "dev.leanroute/mcp-server",
+  "description": "MCP server for Leanroute — lets agents (Claude Code, Cursor, Windsurf, Cline) list models, check pricing, route LLM calls, and manage keys/usage/credit on their Leanroute account.",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "leanroute",
+    "llm-gateway",
+    "openai",
+    "anthropic",
+    "claude-code",
+    "cursor"
+  ],
+  "license": "Apache-2.0",
+  "homepage": "https://leanroute.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leanroute/integrations.git",
+    "directory": "packages/mcp-server"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "leanroute-mcp": "./dist/bin.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "start": "node dist/bin.js",
+    "dev": "tsc -p tsconfig.build.json --watch"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "@types/node": "^22.7.5"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "bugs": {
+    "url": "https://github.com/leanroute/integrations/issues"
+  }
+}
